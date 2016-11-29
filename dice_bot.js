@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const generator = require('./generator.js');
+const secret = require('./secret.js'); 
 
 
 client.on('ready', () => {
@@ -20,4 +21,4 @@ client.on('message', message => {
 
 });
 
-client.login('MjUzMDIxNjY1MTg3OTg3NDU3.Cx6dCQ.R1vG4XmJy3dAOuacR0NxS7EkQGs');
+client.login(secret.key);
