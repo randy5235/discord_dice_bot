@@ -1,0 +1,17 @@
+{
+  "name": "discord_dice_roller",
+  "version": "0.0.1",
+  "description": "Dice Expression evaluator for discord  bot",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node dice_bot.js"
+  },
+  "author": "Randy Wressell",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^10.0.1",
+    "node-opus": "^0.2.4",
+    "opusscript": "0.0.1"
+  }
+}
