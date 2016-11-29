@@ -8,9 +8,12 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.content.match(/^\/r.*/)) {
+  if (message.content.match(/^\/r help$/)){
+    message.reply(`Dice Roller accepts simple dice expressions such as *d6* or *3d20* or *2d10+5*`);
+  } else if (message.content.match(/^\/r.*/)) {
     message.reply(generator.diceRoller(message.content));
   }
+
 });
 
 client.login('MjUzMDIxNjY1MTg3OTg3NDU3.Cx6dCQ.R1vG4XmJy3dAOuacR0NxS7EkQGs');
