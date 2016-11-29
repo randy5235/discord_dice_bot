@@ -28,6 +28,7 @@ exports.diceRoller = function(message) {
       total /= parseInt(operand);
     }
   }
+
   return `${diceArray}${operator || ''}${operand || ''} = ${total}`;
 };
 

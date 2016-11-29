@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node dice_bot.js"
+    "start": "node dice_bot.js",
+    "dev": "nodemon dice_bot.js"
   },
   "author": "Randy Wressell",
   "license": "ISC",
