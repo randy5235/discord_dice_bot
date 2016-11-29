@@ -5,11 +5,15 @@ const generator = require('./generator.js');
 
 client.on('ready', () => {
   console.log('I am ready!');
+  let id = client.channels.find("name","general").id;
+  // console.log(client);
+  let channel = client.channels.find('id', `${id}`);
+  channel.sendMessage("Please type **/r help** for more information");
 });
 
 client.on('message', message => {
   if (message.content.match(/^\/r help$/)){
-    message.reply(`Dice Roller accepts simple dice expressions such as *d6* or *3d20* or *2d10+5*`);
+    message.reply(`Dice Roller accepts simple dice expressions starting with */r* followed by *d6* or *3d20* or *2d10+5*`);
   } else if (message.content.match(/^\/r.*/)) {
     message.reply(generator.diceRoller(message.content));
   }
