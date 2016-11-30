@@ -7,7 +7,7 @@ exports.diceRoller = function(message) {
   console.log(diceExpression);
   var count = diceExpression.match(/^[^d]*/)[0] || 1;
   // console.log(count);
-  var die = diceExpression.match(/d(.[^+\-*\/\s]*)/)[1];
+  var die = diceExpression.match(/d(.[^+\-*\/\s]*)/)[1] || 0;
   var operator = diceExpression.match(/[\+\-\/\*]/) ? diceExpression.match(/[\+\-\/\*]/)[0] : 0;
   var operand = diceExpression.match(/[\+\-\/\*](.*)/) ? diceExpression.match(/[\+\-\/\*](.*)/)[1] : 0;
   var diceArray = [];
@@ -32,7 +32,7 @@ exports.diceRoller = function(message) {
   return `${diceArray}${operator || ''}${operand || ''} = ${total}`;
 };
 
-function rollDice(sides) {
+exports.rollDice = function(sides) {
   var multiplier = 1;
   if (sides == '%') {
     sides = 10;
