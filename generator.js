@@ -37,6 +37,8 @@ exports.rollDice = function(sides) {
   if (sides == '%') {
     sides = 10;
     multiplier = 10;
-   }
+  }else if(sides === 0) {
+    multiplier = 0;
+  }
   return Math.floor(Math.random() * (sides) + 1) * (multiplier);
 };
