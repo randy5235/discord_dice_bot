@@ -38,5 +38,5 @@ function rollDice(sides) {
     sides = 10;
     multiplier = 10;
    }
-  return Math.floor(Math.random() * (sides) + 1) * (multiplier || 1);
+  return Math.floor(Math.random() * (sides) + 1) * (multiplier);
 };
