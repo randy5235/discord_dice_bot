@@ -33,5 +33,10 @@ exports.diceRoller = function(message) {
 };
 
 function rollDice(sides) {
-  return Math.floor(Math.random() * (sides) + 1);
+  var multiplier = 1;
+  if (sides == '%') {
+    sides = 10;
+    multiplier = 10;
+   }
+  return Math.floor(Math.random() * (sides) + 1) * (multiplier || 1);
 };
