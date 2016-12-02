@@ -4,7 +4,7 @@
   "description": "Dice Expression evaluator for discord  bot",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha tests/*",
     "start": "node dice_bot.js",
     "dev": "nodemon dice_bot.js"
   },
