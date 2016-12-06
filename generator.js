@@ -1,9 +1,9 @@
 'use strict';
 //var diceExpression = document.getElementById('expresssionInput').value;
 
-exports.diceRoller = function(message) {
+module.exports.diceRoller = function(message) {
   //this should take expressions like 3d6 etc.
-  var diceExpression = message.replace(/^\/r /,'');
+  var diceExpression = message.replace(/^\/r |^\/roll /,'');
   console.log(diceExpression);
   var count = diceExpression.match(/^[^d]*/)[0] || 1;
   // console.log(count);
@@ -13,7 +13,7 @@ exports.diceRoller = function(message) {
   var diceArray = [];
   var total = 0;
   for (var i = 0; i < count; i++) {
-    var value = rollDice(die);
+    var value = module.exports.rollDice(die);
     diceArray[i] = value;
     total += value;
   }
@@ -32,7 +32,7 @@ exports.diceRoller = function(message) {
   return `${diceArray}${operator || ''}${operand || ''} = ${total}`;
 };
 
-exports.rollDice = function(sides) {
+module.exports.rollDice = function(sides) {
   var multiplier = 1;
   if (sides == '%') {
     sides = 10;
